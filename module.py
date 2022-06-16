@@ -596,17 +596,15 @@ def set_polycon_tk(num):
             if type(polygon_employ) == str:
                 polygon_employ = ast.literal_eval(polygon_employ)
                 polygon_customer = ast.literal_eval(polygon_customer)
-            contours1 = np.array(polygon_employ)
-            contours2 = np.array(polygon_customer)
-            cv2.fillPoly(frame, pts=[contours2], color=(2, 255, 255))
-            cv2.fillPoly(frame, pts=[contours1], color=(1, 0, 255))
+                contours1 = np.array(polygon_employ)
+                contours2 = np.array(polygon_customer)
+                cv2.fillPoly(frame, pts=[contours2], color=(2, 255, 255))
+                cv2.fillPoly(frame, pts=[contours1], color=(1, 0, 255))
 
 
-            cv2.imshow('result_polygon',frame)
+                cv2.imshow('result_polygon',frame)
             k = cv2.waitKey(1)
             if k == ord('q'):
                 break
-            elif k == ord('c'):
-                pass
         cap.release()
         cv2.destroyAllWindows()
