@@ -22,7 +22,7 @@ def run_config():
         cam=rtsp_url4: set_polycon_tk(cam))
     ch4.pack(padx=5, pady=5)
 
-    root.attributes('-topmost', True)
+    # root.attributes('-topmost', True)
 
     root.mainloop()
 
@@ -62,6 +62,6 @@ if __name__ == '__main__':
     admin.pack(padx=5, pady=5, side="bottom")
 
     root.protocol('WM_DELETE_WINDOW', confirm_yesno)
-    root.attributes('-topmost', True)
+    # root.attributes('-topmost', True)
 
     root.mainloop()
