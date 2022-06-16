@@ -482,9 +482,17 @@ def set_polygon(rtsp_url):
             cv2.fillPoly(img, pts=[contours2], color=(2, 255, 255))
             cv2.fillPoly(img, pts=[contours1], color=(1, 0, 255))
         # cv2.fillPoly(img, pts=[result3], color=(3, 0, 255))
+        for x,y in poly1:
+            cv2.putText(img, str(x) + ',' +
+                        str(y), (x, y), cv2.FONT_HERSHEY_SIMPLEX,
+                        1, (255, 0, 0), 2)
+        for x,y in poly2:
+            cv2.putText(img, str(x) + ',' +
+                        str(y), (x, y), cv2.FONT_HERSHEY_SIMPLEX,
+                        1, (255, 0, 0), 2)
         cv2.imshow('image', img)
         cv2.setMouseCallback('image', click_event)
-        k = cv2.waitKey(0)
+        k = cv2.waitKey(1)
         if k == ord('q') and (check_click ==3): #q
             break
         elif k == ord('d'): #d
