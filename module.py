@@ -552,7 +552,7 @@ def write_nvr():
         write_config.add_section('BASE CONFIG')
         write_config.set('BASE CONFIG', 'rtsp_source','rtsp://admin:888888@192.168.1.50:10554/tcp/')
         write_config.set('BASE CONFIG', 'camera opened', 'TRUE')
-        write_config.set('BASE CONFIG', 'save image result', 'TRUE')
+        write_config.set('BASE CONFIG', 'save image result', 'FALSE')
         cfgfile = open('config.ini','w')
         write_config.write(cfgfile)
         cfgfile.close()
