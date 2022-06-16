@@ -472,6 +472,7 @@ def set_polygon(rtsp_url):
     poly1 = []
     poly2 = []
     check_click = 0
+
     while True:
         _, img = cap.read()
         img = cv2.resize(img, size_img_vdo)
@@ -484,26 +485,26 @@ def set_polygon(rtsp_url):
         cv2.imshow('image', img)
         cv2.setMouseCallback('image', click_event)
         k = cv2.waitKey(0)
-        if (k == 113) and (check_click ==3): #q
+        if k == ord('q') and (check_click ==3): #q
             break
-        elif k == 100: #d
+        elif k == ord('d'): #d
             print('clear array')
             poly1 = []
             poly2 = []
             check_click = 0
-        elif (k == 122) and (check_click ==0): #z
+        elif k == ord('z') and (check_click ==0): #z
             print('save poly1')
             result1 = poly1
             poly1 = []
             poly2 = []
             check_click += 1
-        elif (k == 120) and (check_click ==1): #x
+        elif k == ord('x') and (check_click ==1): #x
             print('save poly2')
             result2 = poly2
             poly1 = []
             poly2 = []
             check_click += 1
-        elif (k == 99) and (check_click ==2): #c
+        elif k == ord('c') and (check_click ==2): #c
             try:
                 print(f'check array\n{result1}\n{result2}')
                 check_click += 1
