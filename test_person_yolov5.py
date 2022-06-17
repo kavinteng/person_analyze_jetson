@@ -20,7 +20,7 @@ while True:
 
     if et-st > 0.2:
 
-        results = model(frame, size=640)
+        results = model(frame, size=320)
         out2 = results.pandas().xyxy[0]
 
         if len(out2) != 0:
