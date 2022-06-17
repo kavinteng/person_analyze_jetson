@@ -18,7 +18,7 @@ while True:
         st = time.time()
     et = time.time()
 
-    if et-st > 1:
+    if et-st > 0.2:
 
         results = model(frame, size=640)
         out2 = results.pandas().xyxy[0]
